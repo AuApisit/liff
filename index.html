@@ -1,10 +1,12 @@
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
   <title>My LIFF App</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
@@ -74,7 +76,7 @@
       const result = await liff.scanCode()
       document.getElementById("scanCode").append(result.value)
     }
-    
+
     function openWindow() {
       liff.openWindow({
         url: "https://line.me",
@@ -123,7 +125,7 @@
       document.getElementById("displayName").append(profile.displayName)
       document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
     }
-    
+
     function getEnvironment() {
       document.getElementById("os").append(liff.getOS())
       document.getElementById("language").append(liff.getLanguage())
@@ -148,6 +150,8 @@
           getContext()
           getFriendship()
           createUniversalLink()
+          const context = liff.getContext();
+          console.log("context: ", context);
         } else {
           liff.login()
         }
@@ -157,4 +161,5 @@
     main()
   </script>
 </body>
+
 </html>

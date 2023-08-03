@@ -15,7 +15,7 @@
   <p id="displayName"><b>displayName:</b> </p>
   <p id="statusMessage"><b>statusMessage:</b> </p>
   <p id="decodedIDToken"><b>email:</b> </p>
-  
+
   <script>
     // Query Params
     const queryString = decodeURIComponent(window.location.search);
@@ -37,8 +37,10 @@
       await liff.init({ liffId: "2000232036-6zg8O54L" })
       if (liff.isLoggedIn()) {
         getUserProfile()
+        const context = liff.getContext();
+        console.log("context: ", context);
       } else {
-        liff.login({ redirectUri: "YOUR-GITHUB-PAGES-DOMAIN/liff/path/" })
+        liff.login({ redirectUri: "https://auapisit.github.io/liff/path/" })
       }
     }
     main()
