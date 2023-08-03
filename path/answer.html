@@ -37,8 +37,6 @@
       await liff.init({ liffId: "2000232036-6zg8O54L" })
       if (liff.isLoggedIn()) {
         getUserProfile()
-        const context = liff.getContext();
-        console.log("context: ", context);
       } else {
         liff.login({ redirectUri: "https://auapisit.github.io/liff/path/" })
       }
